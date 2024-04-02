@@ -17,7 +17,12 @@
 ## Usage
 Copy this folder to USB then run 'apply-config.sh' when init
 
-# Credits
+## Credits
 - [onedr0p/vyos-build](https://github.com/onedr0p/vyos-build)
 - [Ramblurr/vyos](https://github.com/Ramblurr/vyos)
 - [bjw-s/vyos-config](https://github.com/bjw-s/vyos-config)
+
+# TODO
+- add container configs for adguard / dnsmasq / matchbox / kms / clash / haas
+- change reference configs
+- update age and sops secrets
