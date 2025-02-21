@@ -1,23 +1,15 @@
 # vyos-config
--  **Latest LTS and Current, rolling**
+- re-open for vyos-stream
 - AMD64 w/ packages
 - for NUC router ( CPU: Intel N100; NIC: i225-V )
 
-## Packages
-- moreutils
-- tree
-- vim
-- jo
-- jq
-- [vyaml](https://github.com/p3lim/vyaml)
-- [sops](https://github.com/getsops/sops)
-- [age](https://github.com/FiloSottile/age)
-- [bottom](https://github.com/ClementTsang/bottom)
-
 ## Usage
-Copy this folder to USB then run 'apply-config.sh' when init
+1. copy this folder to USB stick;
+2. add intel nic drivers if needed, [ref](https://support.vyos.io/support/solutions/articles/103000063901-updating-intel-nic-firmware-nvm-and-drivers-on-vyos);
+3. copy config files to `/config`;
+4. run 'apply-config.sh' to init;
 
-# Credits
-- [onedr0p/vyos-build](https://github.com/onedr0p/vyos-build)
-- [Ramblurr/vyos](https://github.com/Ramblurr/vyos)
+## Credits
+- [onedr0p/vyos-config](https://github.com/onedr0p/infra/tree/main/ansible/roles/vyos)
+- [Ramblurr/vyos-config](https://github.com/Ramblurr/home-ops/tree/main/vyos)
 - [bjw-s/vyos-config](https://github.com/bjw-s/vyos-config)

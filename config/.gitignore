@@ -1,0 +1,30 @@
+# Ignore everything
+/*
+
+# Exceptions
+!.gitignore
+!*.sh
+!example.env
+
+## Track container configs only
+!containers
+containers/*
+
+!containers/blackbox_exporter
+containers/blackbox_exporter/*
+!containers/blackbox_exporter/config
+
+!containers/node_exporter
+containers/node_exporter/*
+!containers/node_exporter/textfile_collector
+
+!containers/cloudflare_ddns
+containers/cloudflare_ddns/*
+!containers/cloudflare_ddns/config
+
+## Track scripts only
+!scripts
+scripts/*
+
+!scripts/*.script
+!scripts/*.sh
