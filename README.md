@@ -5,13 +5,13 @@
 
 ## Usage
 
+- download this repo;
 - fill vars in `config/example.env`, then rename it `.env`;
 
 ### bootstrap
 
-- copy this repo to usb stick, mount it inside vyos;
+- copy files to usb stick, mount it inside vyos;
 - run `apply-config.sh`;
-- add intel nic drivers if needed, [ref](https://support.vyos.io/support/solutions/articles/103000063901-updating-intel-nic-firmware-nvm-and-drivers-on-vyos);
 - reboot;
 
 ### update
