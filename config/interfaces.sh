@@ -5,6 +5,8 @@
 # Router.Gen1.interfaces: WAN(1), LAN(1), STACK(2), OPT(2);
 # Router.Gen2.interfaces: WAN(1), LAN(1), STACK(2); STACK(2) = SFP x2;
 
+# Planned: WAN load balancing, ref:https://docs.vyos.io/en/latest/configuration/loadbalancing/wan.html
+
 set interfaces ethernet eth0 description 'WAN'
 set interfaces pppoe pppoe0 description 'WAN pppoe'
 set interfaces pppoe pppoe0 authentication username "${ISP_AUTH_USER}"

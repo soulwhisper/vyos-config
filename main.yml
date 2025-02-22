@@ -1,0 +1,51 @@
+---
+
+- hosts: router
+  connection: network_cli
+  gather_facts: 'no'
+
+  tasks:
+    - name: Configure remote router System
+      vyos.vyos.vyos_config:
+        src: config/system.sh
+        backup: true
+
+    - name: Configure remote router Interfaces
+      vyos.vyos.vyos_config:
+        src: config/interfaces.sh
+        backup: true
+
+    - name: Configure remote router Firewall
+      vyos.vyos.vyos_config:
+        src: config/firewall.sh
+        backup: true
+
+    - name: Configure remote router NAT
+      vyos.vyos.vyos_config:
+        src: config/nat.sh
+        backup: true
+
+    - name: Configure remote router Protocols
+      vyos.vyos.vyos_config:
+        src: config/protocols.sh
+        backup: true
+
+    - name: Configure remote router Services - Monitoring
+      vyos.vyos.vyos_config:
+        src: config/service-monitoring.sh
+        backup: true
+
+    - name: Configure remote router Services - DHCP
+      vyos.vyos.vyos_config:
+        src: config/service-dhcp-server.sh
+        backup: true
+
+    - name: Configure remote router Services - Misc
+      vyos.vyos.vyos_config:
+        src: config/service-misc.sh
+        backup: true
+
+    - name: Configure remote router Containers
+      vyos.vyos.vyos_config:
+        src: config/containers.sh
+        backup: true

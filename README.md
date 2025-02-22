@@ -4,10 +4,21 @@
 - for NUC router ( CPU: Intel N100; NIC: i225-V )
 
 ## Usage
-1. copy this folder to USB stick;
-2. add intel nic drivers if needed, [ref](https://support.vyos.io/support/solutions/articles/103000063901-updating-intel-nic-firmware-nvm-and-drivers-on-vyos);
-3. copy config files to `/config`;
-4. run 'apply-config.sh' to init;
+
+- fill vars in `config/example.env`, then rename it `.env`;
+
+### bootstrap
+
+- copy this repo to usb stick, mount it inside vyos;
+- run `apply-config.sh`;
+- add intel nic drivers if needed, [ref](https://support.vyos.io/support/solutions/articles/103000063901-updating-intel-nic-firmware-nvm-and-drivers-on-vyos);
+- reboot;
+
+### update
+
+- install `ansible`, `python3-paramiko` and `vyos.vyos` collection; [ref](https://docs.ansible.com/ansible/latest/collections/vyos/vyos/index.html);
+- change ip in `hosts`;
+- run `ansible-playbook -i hosts main.yml`;
 
 ## Credits
 - [onedr0p/vyos-config](https://github.com/onedr0p/infra/tree/main/ansible/roles/vyos)

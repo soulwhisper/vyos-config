@@ -1,7 +1,6 @@
 #!/bin/vbash
 
 # VRF
-# `inbound-interface` use VRF name, `outbound-interface` use interface name;
 set vrf bind-to-all
 
 set vrf name WAN table '101'
@@ -32,8 +31,6 @@ set vrf name WIFI protocols static route 0.0.0.0/0 interface pppoe0 vrf 'WAN'
 set vrf name WIFI protocols static route 10.0.0.0/24 interface eth1 vrf 'LAN'
 set vrf name WIFI protocols static route 10.0.10.0/24 interface bond0.10 vrf 'DMZ'
 
-set container network containers vrf 'LAN'
-
 # Firewall
 set firewall global-options state-policy established action 'accept'
 set firewall global-options state-policy related action 'accept'
@@ -48,6 +45,7 @@ set firewall ipv4 input filter rule 10 action 'accept'
 set firewall ipv4 input filter rule 10 description 'Allow LAN to Router'
 set firewall ipv4 input filter rule 10 inbound-interface name 'LAN'
 
+# `inbound-interface` use VRF name, `outbound-interface` use interface name;
 set firewall ipv4 forward filter default-action 'drop'
 set firewall ipv4 forward filter default-log
 set firewall ipv4 forward filter rule 10 action 'accept'

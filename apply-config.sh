@@ -69,11 +69,12 @@ apply_environment_to_configs() {
 # Function to load VyOS specific functions and configuration
 load_vyos_config() {
   source /opt/vyatta/etc/functions/script-template
-  load /opt/vyatta/etc/config.boot.default
+  # load /opt/vyatta/etc/config.boot.default
 }
 
 # Function to process all shell scripts in the /config directory
 process_config_scripts() {
+  configure
   for f in /config/*.sh; do
     if [[ -f "${f}" ]]; then
       echo "Processing ${f}"
