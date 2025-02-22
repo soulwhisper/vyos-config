@@ -26,5 +26,5 @@
 
 ### Options
 
-- **Zones**: more rules, slower speed; easily 100+ rules for a few subnets;
+- **Zone**: more rules, slower speed; 25+ rules for above;
 - **VRF**: routing based, switch friendly; preferred; [ref](https://docs.vyos.io/en/latest/configexamples/fwall-and-vrf.html);
