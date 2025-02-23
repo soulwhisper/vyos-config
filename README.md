@@ -1,12 +1,11 @@
 # vyos-config
-- re-open for vyos-stream
-- AMD64 w/ packages
-- for NUC router ( CPU: Intel N100; NIC: i225-V )
+- re-open for [vyos-stream](https://github.com/vyos/public-images);
+- for NUC router ( CPU: Intel N100; NIC: i225-V );
 
 ## Usage
 
 - download this repo;
-- fill vars in `config/example.env`, then rename it `.env`;
+- fill vars in `config/example.env`, then rename it to `.env`;
 
 ### bootstrap
 
@@ -16,7 +15,7 @@
 
 ### update
 
-- install `ansible`, `python3-paramiko` and `vyos.vyos` collection; [ref](https://docs.ansible.com/ansible/latest/collections/vyos/vyos/index.html);
+- install `ansible`, `python3-paramiko` and [`vyos.vyos`](https://docs.ansible.com/ansible/latest/collections/vyos/vyos/index.html) collection;
 - change ip in `hosts`;
 - run `ansible-playbook -i hosts main.yml`;
 
