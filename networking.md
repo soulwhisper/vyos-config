@@ -16,15 +16,9 @@
 - wifi network, include iot;
 - `10.20.0.0/24`, vlan=`200`, `bond0.200`;
 
-## Firewall
+## Firewall/ACL
 
 - Allow All to WAN;
 - Allow LAN to All;
-- Allow All to DMZ; incl. DNAT from WAN;
-- Allow DMZ to LAB;
+- Allow 80/443/53/179 to DMZ;
 - Drop others;
-
-### Options
-
-- **Zones**: more rules, slower speed; easily 100+ rules for a few subnets;
-- **VRF**: routing based, switch friendly; preferred; [ref](https://docs.vyos.io/en/latest/configexamples/fwall-and-vrf.html);

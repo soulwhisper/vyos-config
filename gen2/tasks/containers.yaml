@@ -1,0 +1,6 @@
+---
+# vyos-tasks:containers
+- name: bootstrap container network
+  vyos.vyos.vyos_config:
+    lines:
+      - set container network containers prefix '192.168.101.0/24'

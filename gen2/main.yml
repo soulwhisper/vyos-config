@@ -1,0 +1,44 @@
+---
+
+- hosts: router
+  connection: network_cli
+  gather_facts: 'no'
+  vars_files:
+    - /vars/secrets.yaml
+
+  tasks:
+    - name: Configure remote router system
+      ansible.builtin.import_tasks:
+        file: tasks/system.yaml
+
+    - name: Configure remote router Interfaces
+      ansible.builtin.import_tasks:
+        file: tasks/interfaces.yaml
+
+    - name: Configure remote router NAT
+      ansible.builtin.import_tasks:
+        file: tasks/nat.yaml
+
+    - name: Configure remote router Firewall
+      ansible.builtin.import_tasks:
+        file: tasks/firewall.yaml
+
+    - name: Configure remote router Protocols
+      ansible.builtin.import_tasks:
+        file: tasks/protocols.yaml
+
+    - name: Configure remote router DHCP Services
+      ansible.builtin.import_tasks:
+        file: tasks/services-dhcp.yaml
+
+    - name: Configure remote router Monitoring Services
+      ansible.builtin.import_tasks:
+        file: tasks/services-mon.yaml
+
+    - name: Configure remote router Misc. Services
+      ansible.builtin.import_tasks:
+        file: tasks/services-misc.yaml
+
+    - name: Configure remote router Containers
+      ansible.builtin.import_tasks:
+        file: tasks/containers.yaml

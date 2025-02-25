@@ -1,0 +1,9 @@
+[vyos_hosts]
+router ansible_ssh_host=10.0.0.2
+
+[vyos_hosts:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=vyos
+ansible_ssh_pass=vyos
+ansible_network_os=vyos
+ansible_connection=network_cli

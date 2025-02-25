@@ -1,0 +1,33 @@
+---
+# vyos-tasks:services-misc
+- name: config SSH service
+  vyos.vyos.vyos_config:
+    lines:
+      - set service ssh port '22'
+      - set service ssh listen-address '10.0.0.1'
+      - set service ssh disable-host-validation
+      - set service ssh disable-password-authentication
+
+- name: config DNS forward service
+  vyos.vyos.vyos_config:
+    lines:
+      - set service dns forwarding domain 'noirprime.com' name-server '10.0.10.10'
+
+- name: config NTP Server service
+  vyos.vyos.vyos_config:
+    lines:
+      - delete service ntp allow-client
+      - delete service ntp server
+      - set service ntp server 'time.cloudflare.com' nts
+      - set service ntp listen-address '10.10.0.2'
+      - set service ntp allow-client address '10.10.0.0/24'
+
+- name: config DDNS service
+  vyos.vyos.vyos_config:
+    lines:
+      - set service dns dynamic name cloudflare description 'cloudflare ddns service'
+      - set service dns dynamic name cloudflare username 'token'
+      - set service dns dynamic name cloudflare password {{ cloudflare_dns_api }}
+      - set service dns dynamic name cloudflare host-name 'opn.noirprime.com'
+      - set service dns dynamic name cloudflare protocol 'cloudflare'
+      - set service dns dynamic name cloudflare address interface 'eth0'
