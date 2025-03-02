@@ -1,5 +1,5 @@
 # vyos-config
-- re-open for vyos-stream;
+- re-open for [vyos-stream](https://github.com/vyos/public-images);
 - for NUC router ( CPU: Intel N100; NIC: i225-V );
 
 ## Usage
