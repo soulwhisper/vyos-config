@@ -15,3 +15,7 @@
       - set protocols bgp neighbor 10.10.0.101 peer-group k8s
       - set protocols bgp neighbor 10.10.0.102 peer-group k8s
       - set protocols bgp neighbor 10.10.0.103 peer-group k8s
+      - set protocols bgp peer-group k8s bfd
+      - set protocols bfd peer 10.10.0.101 interval 300 multiplier 3
+      - set protocols bfd peer 10.10.0.102 interval 300 multiplier 3
+      - set protocols bfd peer 10.10.0.103 interval 300 multiplier 3
